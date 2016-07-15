@@ -2,6 +2,10 @@
 
 The thredUP navigation bar currently is built with dynamic data from our custom CMS service.
 
+## Setup & Pre-Requisites
+1.  You should have [Node.js](https://nodejs.org/) v4 or above installed
+2.  Run `npm install` to install all packages
+
 ## Exercise
 1.  Given the JSON data in `navigation.json`, build a Node.js server endpoint to serve up this data that will be used by your front-end code.
 2.  Build the HTML, CSS, and JavaScript code to request the navigation JSON data and build a thredUP navigation bar, like:
