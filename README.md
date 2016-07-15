@@ -1,6 +1,6 @@
 # thredUP Navigation Bar Exercise
 
-The thredUP navigation bar currently is built with dynamic data from our custom CMS service. The 
+The thredUP navigation bar currently is built with dynamic data from our custom CMS service.
 
 ## Exercise
 1.  Given the JSON data in `navigation.json`, build a Node.js server endpoint to serve up this data that will be used by your front-end code.
@@ -29,7 +29,7 @@ The thredUP navigation bar currently is built with dynamic data from our custom 
 * Babel for ES2015 and React transpilation
 * ESLint
 * Sass for CSS
- 
+
 ## Testing packages in this repo
 * Karma test runner
 * Mocha
