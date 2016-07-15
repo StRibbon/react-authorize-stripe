@@ -1,0 +1,102 @@
+{
+  "id": "63840c35-c419-4972-a952-3ce43fd6ae2f",
+  "key": "navigation",
+  "children": [
+    {
+      "content_type": "link",
+      "data": {
+        "className": "left",
+        "href": "/products/women",
+        "label": "WOMEN"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "left",
+        "href": "/products/designer",
+        "label": "DESIGNER"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "left large-devices",
+        "href": "/products/maternity",
+        "label": "MATERNITY"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "left medium-devices",
+        "href": "/products/women/shoes",
+        "label": "SHOES"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "left medium-devices",
+        "href": "/products/women/handbags",
+        "label": "HANDBAGS"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "left",
+        "href": "/products/girls",
+        "label": "GIRLS"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "left",
+        "href": "/products/boys",
+        "label": "BOYS"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "left",
+        "href": "/products/women/basement",
+        "label": "BASEEMENT"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "ellipsis mobile-nav",
+        "href": "",
+        "label": "•••"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "right sell",
+        "href": "/p/cleanout",
+        "label": "SELL"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "right largest-devices bam",
+        "href": "/badassmoms/karina",
+        "label": "BADASSMOMS"
+      }
+    },
+    {
+      "content_type": "link",
+      "data": {
+        "className": "right largest-devices",
+        "href": "https://blog.thredup.com",
+        "label": "BLOG"
+      }
+    }
+  ]
+}
