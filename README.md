@@ -8,18 +8,22 @@ The thredUP navigation bar currently is built with dynamic data from our custom 
 
 ## Exercise
 1.  Given the JSON data in `navigation.json`, build a Node.js server endpoint to serve up this data that will be used by your front-end code.
-2.  Build the HTML, CSS, and JavaScript code to request the navigation JSON data and build a thredUP navigation bar, like:
+2.  Build the HTML, CSS, and JavaScript code to request the navigation JSON data through an AJAX call and build a thredUP navigation bar that looks like:
 
 ![thredUP Navigation](http://i.imgur.com/Lyrd1L6.png)
 
 ## Requirements
-1.  **Server Endpoint** The given JSON is a sample - if you need to modify it for your answer, feel free to do so
-2.  **Server Endpoint** You can use any Node.js libraries like Express or vanilla Node.js API's to complete this part of the exercise.
-2.  **Client** You can use any set of libraries to complete the exercise. React has been setup in this repo but you are free to use Angular, Ember, jQuery, etc or vanilla JavaScript.
-3.  **Client** The current navigation bar on our site is responsive to various screen sizes, so consider this in your answer.
-4.  **Client** The custom font Proxima Nova has been loaded into the index.html file. You can access this with: `font-family: proxima-nova-1, proxima-nova-2`
-5.  This project structure is a sample. If you need to add, modify, or remove packages or modify configuration files, feel free to do so.
-6.  Please build a functional solution and ZIP up the repo for submission.
+1.  This project structure is a sample. If you need to add, modify, or remove packages or modify configuration files, feel free to do so.
+1.  Please build a functional solution and ZIP up the repo for submission.
+
+### Server Endpoint
+1.  Create a Node server endpoint that returns JSON in the format used by `navigation.json`. This file is a sample - if you need to modify the data for your answer, feel free to do so
+1.  You can use any Node.js libraries like Express or vanilla Node.js API's to complete this part of the exercise.
+
+### Client
+1.  You can use any set of libraries to complete the exercise. React has been setup in this repo but you are free to use Angular, Ember, jQuery, etc or vanilla JavaScript.
+1.  The current navigation bar on our site is responsive to various screen sizes, so consider this in your answer.
+1.  The custom font Proxima Nova has been loaded into the index.html file. You can access this with: `font-family: proxima-nova-1, proxima-nova-2`
 
 ## Commands in this repo
 * `npm run build`: Run Webpack to build the bundle
