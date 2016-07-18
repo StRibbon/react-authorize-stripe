@@ -63,15 +63,7 @@
       "data": {
         "className": "left",
         "href": "/products/women/basement",
-        "label": "BASEEMENT"
-      }
-    },
-    {
-      "content_type": "link",
-      "data": {
-        "className": "ellipsis mobile-nav",
-        "href": "",
-        "label": "•••"
+        "label": "BASEMENT"
       }
     },
     {
