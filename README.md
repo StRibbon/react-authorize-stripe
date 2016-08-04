@@ -21,7 +21,7 @@ The thredUP navigation bar currently is built with dynamic data from our custom 
 1.  You can use any Node.js libraries like Express or vanilla Node.js API's to complete this part of the exercise.
 
 ### Client
-1.  You can use any set of libraries to complete the exercise. React has been setup in this repo but you are free to use Angular, Ember, jQuery, etc or vanilla JavaScript.
+1.  You can use helper libraries (MVC, etc) to complete the exercise. React has been setup in this repo but you are free to use Angular, Ember, jQuery, or vanilla JavaScript. Please do not use Bootstrap/react-bootstrap to complete the exercise.
 1.  The current navigation bar on our site is responsive to various screen sizes, so consider this in your answer.
 1.  The custom font Proxima Nova has been loaded into the index.html file. You can access this with: `font-family: proxima-nova-1, proxima-nova-2`
 
@@ -34,7 +34,7 @@ The thredUP navigation bar currently is built with dynamic data from our custom 
 ## Development Packages in this repo
 * React
 * Babel for ES2015 and React transpilation
-* ESLint
+* ESLint (Airbnb preset - feel free to turn off some rules to suit your coding style)
 * Sass for CSS
 
 ## Testing packages in this repo
