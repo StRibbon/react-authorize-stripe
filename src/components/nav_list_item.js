@@ -1,21 +1,36 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const NavListItem = ({ item }) => {
-  const itemLabel = item.label;
-  const itemClass = classNames({
-    'nav-item': true,
-    // 'active': this.state.isClicked
-  });
+class NavListItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      label: props.item.label,
+      className: props.item.className,
+      active: false
+    };
+  }
 
-  return (
-    <div className={`${itemClass} ${item.className}`}>
-      <a>{itemLabel}</a>
-    </div>
-  );
-};
+  // click() {
+  //   this.setState({ active: true });
+  // }
+
+  // const itemLabel = item.label;
+  // const itemClass = classNames({
+  //   'nav-item': true
+  // });
+  render() {
+    const classes = classNames({ 'nav-item': true });
+    return (
+      <div className={`${classes} ${this.state.className}`}>
+        <a>{this.state.label}</a>
+      </div>
+    );
+  }
+}
 NavListItem.propTypes = {
-  list: React.PropTypes.array,
+  label: React.PropTypes.string,
+  className: React.PropTypes.string,
   item: React.PropTypes.object
 };
 
