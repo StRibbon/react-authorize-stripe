@@ -11,6 +11,5 @@ app.get('/nav', (req, res) =>
 );
 
 app.listen(8081, () =>
-  // eslint-disable-next-line no-use-before-define
   console.log('Nav API located at http://localhost:8081/nav')
 );

@@ -5,12 +5,6 @@ const NavList = (props) => {
   const navItems = props.list.map((item) =>
     <NavListItem key={item.label} item={item} />
   );
-      // var btnClass = classNames({
-      //   'btn': true,
-      //   'btn-pressed': this.state.isPressed,
-      //   'btn-over': !this.state.isPressed && this.state.isHovered
-      // });
-      // return <button className={btnClass}>{this.props.label}</button>;
   return (
     <div className="nav-bar">
       {navItems}

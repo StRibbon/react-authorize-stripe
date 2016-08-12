@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classNames from 'classnames';
 
-class NavListItem extends React.Component {
+class NavListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,12 +13,13 @@ class NavListItem extends React.Component {
   }
 
   handleClick() {
-    this.setState({ active: true });
+    const active = !this.state.isActive;
+    this.setState({ isActive: active });
   }
 
   render() {
     const classes = classNames({ 'nav-item': true });
-    const isActive = classNames({ active: this.state.active });
+    const isActive = classNames({ active: this.state.isActive });
     return (
       <div className={`${classes} ${this.state.className}`}>
         <a className={isActive} onClick={this.handleClick}>{this.state.label}</a>
