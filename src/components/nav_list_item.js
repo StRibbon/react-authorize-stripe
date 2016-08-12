@@ -9,21 +9,19 @@ class NavListItem extends React.Component {
       className: props.item.className,
       active: false
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  // click() {
-  //   this.setState({ active: true });
-  // }
+  handleClick() {
+    this.setState({ active: true });
+  }
 
-  // const itemLabel = item.label;
-  // const itemClass = classNames({
-  //   'nav-item': true
-  // });
   render() {
     const classes = classNames({ 'nav-item': true });
+    const isActive = classNames({ active: this.state.active });
     return (
       <div className={`${classes} ${this.state.className}`}>
-        <a>{this.state.label}</a>
+        <a className={isActive} onClick={this.handleClick}>{this.state.label}</a>
       </div>
     );
   }
