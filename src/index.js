@@ -1,7 +1,7 @@
 import './index.scss';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import NavList from './components/nav_list';
+import SearchInput from './components/search_input';
 
 /* eslint react/prefer-stateless-function: "off" */
 
@@ -9,38 +9,44 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { list: [] };
-
-    const status = response => {
-      if (response.status >= 200 && response.status < 300) {
-        return Promise.resolve(response);
-      }
-      return Promise.reject(new Error(response.statusText));
-    };
-
-    const json = response =>
-      response.json();
-
-    fetch('http://localhost:8081/nav')
-      .then(status)
-      .then(json)
-      .then(data =>
-        this.setState({ list: data.children })
-      );
+    this.state = { ballResponse: '' };
   }
   render() {
+    const rollBall = () => {
+      const question = 'Is this number valid?';
+      const magic = new XMLHttpRequest();
+      magic.open('GET', `https://8ball.delegator.com/magic/JSON/${encodeURIComponent(question)}`);
+      magic.onreadystatechange = () => {
+        if (magic.readyState !== 4 || magic.status !== 200) {
+          return;
+        }
+        const response = JSON.parse(magic.responseText);
+        const type = response.magic.type;
+        const answer = response.magic.answer;
+        if (type === 'Affirmative') {
+          this.setState({ ballResponse: answer });
+          console.log('Your number has been found');
+        } else if (type === 'Netural') {
+          this.setState({ ballResponse: answer });
+          console.log('Request succeeded, but your number is not in our system');
+        } else {
+          this.setState({ ballResponse: answer });
+          console.log('Request failed, please try another number');
+        }
+      };
+      magic.send();
+    };
     return (
-      <div>
-        <NavList list={this.state.list} />
+      <div className="container">
+        <SearchInput
+          rollBall={() => rollBall()}
+          ballResponse={this.state.ballResponse}
+        />
       </div>
     );
   }
 }
 
 // const App = (props) => <div>{props.children}</div>;
-App.propTypes = {
-  children: React.PropTypes.node,
-  list: React.PropTypes.array
-};
 
 ReactDOM.render(<App />, document.querySelector('.container'));
