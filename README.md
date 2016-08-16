@@ -4,7 +4,7 @@
 1.  You should have [Node.js](https://nodejs.org/) v4 or above installed
 2.  Run `npm install` to install all packages
 
-## Setup
+## Build Client
 1. npm run dev
 2. navigate browser to http://localhost.3000/
 

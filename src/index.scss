@@ -9,8 +9,6 @@ body {
   color: #fff;
 }
 h4 {
-  margin-left: auto;
-  margin-right: auto;
   padding-top: 16px;
   padding-bottom: 12px;
   font-family: 'avenir-book';
@@ -28,40 +26,7 @@ h4 {
   border-radius: 0 !important;
 }
 .submit {
-  background-color: $light-gray;
-  border: 1px $ivy-dark solid;
-  color: $ivy-light;
-}
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px) {
-  // body {
-  //   font-size: 2em;
-  // }
-  // h4 {
-  //   font-size: 1.5em;
-  // }
-}
-
-/* Extra Small Devices, Phones */
-// @media only screen and (min-width : 543px) {
-//   .form-inline {
-//     display:inline;
-//   }
-//
-// }
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-
+  background-color: $ivy-dark;
+  border: 1px $light-gray solid;
+  color: #fff;
 }
