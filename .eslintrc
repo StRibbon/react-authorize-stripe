@@ -14,5 +14,9 @@
     "comma-dangle": 0,
     "mocha/no-global-tests": 1,
     "no-unused-expressions": 0,
-  }
+    "no-console": 0,
+  },
+  "globals": {
+    "Stripe": true,
+  },
 }
