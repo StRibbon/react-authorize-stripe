@@ -12,10 +12,14 @@ class App extends Component {
     this.state = {
       phoneNum: '',
       numStatus: false,
-      ballResponse: '',
+      status: '',
+      response: ''
     };
   }
   render() {
+    const handleChange = (status, response) => {
+      this.setState({ status, response });
+    };
     const rollBall = () => {
       const question = 'Is this number valid?';
       const magic = new XMLHttpRequest();
@@ -28,17 +32,20 @@ class App extends Component {
         const type = response.magic.type;
         if (type === 'Affirmative') {
           this.setState({
-            ballResponse: 'Confirmed: your number has been found',
+            response: 'Your number has been found',
+            status: 'alert alert-success',
             numStatus: true
           });
         } else if (type === 'Neutral') {
           this.setState({
-            ballResponse: 'Netural: number is not in our system',
+            response: 'Your number is not in our system',
+            status: 'alert alert-info',
             phoneNum: ''
           });
         } else {
           this.setState({
-            ballResponse: 'Failed: please try another number',
+            response: 'Please try another number',
+            status: 'alert alert-danger',
             phoneNum: ''
           });
         }
@@ -46,22 +53,25 @@ class App extends Component {
       magic.send();
     };
     return (
-      <div className="container">
-        {this.state.numStatus === false ? <SearchInput
-          rollBall={() => rollBall()}
-          phoneNum={this.state.phoneNum}
-          ballResponse={this.state.ballResponse}
-          onChange={(phoneNum) => {
-            this.setState({ phoneNum });
-          }}
-        /> : null}
-        <div>
-          <p>{this.state.ballResponse}</p>
+      <div>
+        <div className={this.state.status}>
+          {this.state.response}
         </div>
-        {this.state.numStatus ? <CreditCardForm /> : null}
+        <div className="container">
+          {this.state.numStatus === false ? <SearchInput
+            rollBall={() => rollBall()}
+            phoneNum={this.state.phoneNum}
+            onChange={(phoneNum) => {
+              this.setState({ phoneNum });
+            }}
+          /> : null}
+          {this.state.numStatus ? <CreditCardForm
+            handleChange={(status, response) => handleChange(status, response)}
+          /> : null}
+        </div>
       </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<App />, document.querySelector('.react-app'));

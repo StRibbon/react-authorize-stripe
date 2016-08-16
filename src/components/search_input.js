@@ -7,6 +7,7 @@ const SearchInput = (props) =>
       props.rollBall();
     }}
   >
+    <h4>Please enter your phone number to confirm your invite</h4>
     <div className="form-group">
       <input
         className="form-control"
@@ -14,11 +15,8 @@ const SearchInput = (props) =>
         value={props.phoneNum}
         onChange={(e) => props.onChange(e.target.value)}
       />
-      <small className="form-text text-muted">
-        Please enter a 9 digit number without dashes
-      </small>
     </div>
-    <button className="btn btn-primary">Submit Number</button>
+    <button className="btn submit">Submit Number</button>
   </form>;
 
 SearchInput.propTypes = {

@@ -5,7 +5,7 @@ const initialState = {
   number: '',
   cvc: '',
   exp_month: '',
-  exp_year: ''
+  exp_year: '',
 };
 
 class CreditCardForm extends Component {
@@ -14,11 +14,22 @@ class CreditCardForm extends Component {
     this.state = Object.assign({}, initialState);
   }
   render() {
-    const handleClick = () => {
-      console.log(this.state.name);
+    const handleClick = (e) => {
+      e.preventDefault();
       Stripe.card.createToken(this.state, (err, token) => {
-        console.log(token.id);
-        this.setState(Object.assign({}, initialState));
+        if (err !== 200) {
+          this.props.handleChange(
+            'alert alert-danger',
+            'Your credit card is invalid'
+          );
+        } else {
+          this.props.handleChange(
+            'alert alert-success',
+            'Your credit card was accepted'
+          );
+          console.log(`${this.state.name} & ${token.id}`);
+          this.setState(Object.assign({}, initialState));
+        }
       });
     };
     return (
@@ -45,37 +56,42 @@ class CreditCardForm extends Component {
         <div className="form-group">
           <label>CVC #</label>
           <input
-            className="form-control"
-            placeholder="Enter your CVC"
+            className="form-control small-input"
+            placeholder="cvc"
             data-stripe="cvc"
             value={this.state.cvc}
             onChange={event => this.setState({ cvc: event.target.value })}
           />
         </div>
-        <div className="form-inline">
+        <div className="form-group">
           <label>Expiration</label>
-          <input
-            className="form-control"
-            placeholder="Enter month"
-            data-stripe="exp_month"
-            value={this.state.exp_month}
-            onChange={event => this.setState({ exp_month: event.target.value })}
-          />
-          /
-          <input
-            className="form-control"
-            placeholder="Enter year"
-            data-stripe="exp_year"
-            value={this.state.exp_year}
-            onChange={event => this.setState({ exp_year: event.target.value })}
-          />
+          <div className="row">
+            <div className="col-xs-2 col-sm-2 col-lg-1">
+              <input
+                className="form-control small-input"
+                placeholder="mm"
+                data-stripe="exp_month"
+                value={this.state.exp_month}
+                onChange={event => this.setState({ exp_month: event.target.value })}
+              />
+            </div>
+            <div className="col-xs-2 col-sm-2 col-lg-1">
+              <input
+                className="form-control small-input"
+                placeholder="yy"
+                data-stripe="exp_year"
+                value={this.state.exp_year}
+                onChange={event => this.setState({ exp_year: event.target.value })}
+              />
+            </div>
+          </div>
         </div>
-        <span
-          onClick={() => handleClick()}
-          className="btn btn-primary"
+        <button
+          onClick={(e) => handleClick(e)}
+          className="btn submit"
         >
-          Submit Payment Info
-        </span>
+          Submit Payment
+        </button>
       </form>
     );
   }
@@ -83,6 +99,7 @@ class CreditCardForm extends Component {
 
 CreditCardForm.propTypes = {
   rollBall: React.PropTypes.func,
+  handleChange: React.PropTypes.func,
 };
 
 export default CreditCardForm;

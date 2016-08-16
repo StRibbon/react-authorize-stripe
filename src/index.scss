@@ -1,84 +1,67 @@
-h1 {
-  color: #8fd0b3;
-}
+$ivy-light: #007974;
+$ivy-dark: #066;
+$light-gray: #d8d8d8;
 
-a {
-  display: block;
-  padding: 1rem 2rem;
-  padding: 10px 0;
+body {
+  font-family: "avenir-medium";
+  font-size: 1em;
+  background-color: $ivy-light;
+  color: #fff;
+}
+h4 {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 16px;
+  padding-bottom: 12px;
+  font-family: 'avenir-book';
+}
+.alert {
   text-align: center;
-  cursor: pointer;
-  &:hover {
-    border-bottom: 5px solid #4a4a4a;
-    padding-bottom: 9px;
-  }
-  &.active {
-    border-bottom: 5px solid #4a4a4a;
-    padding-bottom: 9px;
-  }
+}
+.small-input {
+  width: 4em !important;
+}
+.form-inline {
+  padding-bottom: 16px;
+}
+* {
+  border-radius: 0 !important;
+}
+.submit {
+  background-color: $light-gray;
+  border: 1px $ivy-dark solid;
+  color: $ivy-light;
 }
 
-.nav-bar {
-  flex-flow: row;
-  width: 100%;
-  border-width: 1px 0px 1px 0px;
-  border-style: solid;
-  border-color: #a99261;
-  height: 42px;
-  line-height: 19px;
-  font-family: 'proxima-nova-1';
-  font-size: 12px;
-  font-weight: 700;
-  padding: 10px 13px 10px 13px;
-  justify-content: space-between;
-  min-width: 320px;
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+  // body {
+  //   font-size: 2em;
+  // }
+  // h4 {
+  //   font-size: 1.5em;
+  // }
 }
 
-.nav-item {
-  color: #4a4a4a;
-  display: inline;
-  padding-right: 2rem;
-}
+/* Extra Small Devices, Phones */
+// @media only screen and (min-width : 543px) {
+//   .form-inline {
+//     display:inline;
+//   }
+//
+// }
 
-.left {
-  float: left;
-}
-.right {
-  float: right;
-}
-
-.medium-devices {
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
 
 }
-.large-devices {
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
 
 }
-.sell {
-  color: #8fd0b3 !important;
-}
 
-$breakpoint-bam: 1100px;
-$breakpoint-noFloat: 950px;
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
 
-@media (max-width: #{$breakpoint-bam}) {
-  .bam {
-    display: none;
-  }
-}
-@media (max-width: #{$breakpoint-noFloat}) {
-  .nav-bar {
-    margin-top: 10px;
-  }
-  .largest-devices {
-    display: none;
-  }
-  .nav-item {
-    float: left !important;
-    padding-right: 0px;
-  }
-  .nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
 }
