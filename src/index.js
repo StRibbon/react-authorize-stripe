@@ -66,7 +66,7 @@ class App extends Component {
             }}
           /> : null}
           {this.state.numStatus ? <CreditCardForm
-            handleChange={(status, response) => handleChange(status, response)}
+            handleChange={handleChange}
           /> : null}
         </div>
       </div>
