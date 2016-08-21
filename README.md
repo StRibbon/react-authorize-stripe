@@ -1,4 +1,4 @@
-# IVY CHALLENGE by STEPHEN RIBBON
+# React-Authorize-Stripe by STEPHEN RIBBON
 
 ## Setup & Pre-Requisites
 1.  You should have [Node.js](https://nodejs.org/) v4 or above installed
